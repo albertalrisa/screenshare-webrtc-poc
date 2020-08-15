@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div x-data="data()">
+      <div class="flex">
+        <div class="w-full p-4 text-lg items-center">Web-based Screensharing Proof of Concept</div>
+        <div class="flex-shrink-0 p-4 items-center">
+          <img class="h-8 select-none" src="./img/nullhub-logo.png" alt="nullhub Logo">
+        </div>
+      </div>
+      <div>
+        <div class="px-4 py-8 flex flex-col items-center" style="background-image: url('./img/nullhub-bg.png'); background-size: 8rem;">
+          <div class="flex justify-center items-end w-full mb-4">
+            <div class="font-light text-2xl text-white max-w-4xl w-full">getDisplayMedia and WebRTC Experiment</div>
+            <div class="w-1/4 text-white flex justify-end ml-4" x-text="today"></div>
+          </div>
+          <div class="flex justify-center items-stretch w-full">
+            <div class="flex w-3/4 max-w-4xl flex-col" style="max-height: 75vh;">
+              <div class="bg-gray-900 bg-center bg-no-repeat" style="background-image: url('./img/nullhub-overlay.png');">
+                <video autoplay id="screen" class="w-full"></video>
+              </div>
+            </div>
+            <div class="bg-white p-2 w-1/4 ml-4">
+              <div>Information</div>
+              <div>Bitrate?</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex bg-gray-800 justify-center">
+          <button x-show="streaming == false" @click="startScreenCapture" class="p-4 text-2xl hover:bg-gray-600">▶</button>
+          <button x-show="streaming" @click="stopScreenCapture" class="p-4 text-2xl hover:bg-gray-600">⏹</button>
+          <button class="p-4 text-2xl hover:bg-gray-600">⏺</button>
+        </div>
+      </div>
+      <div>
+        <div>System Support</div>
+        <div class="grid col-gap-2 grid-flow-col w-full">
+          <div>MediaDevice</div>
+          <div x-text="mediaSupport.mediaDevice"></div>
+          <div>MediaStream</div>
+          <div x-text="mediaSupport.mediaStream"></div>
+          <div>Device Enumeration</div>
+          <div x-text="mediaSupport.enumerateDevices"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/index.ts"></script>
+  </body>
+</html>
