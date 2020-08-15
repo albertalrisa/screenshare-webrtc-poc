@@ -1,0 +1,29 @@
+{
+  "name": "screenshare-webrtc",
+  "version": "1.0.0",
+  "description": "Testing for Screensharing via WebRTC",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "lint": "eslint ./src/**/*.ts",
+    "lint:watch": "watch \"npm run lint\" ."
+  },
+  "author": "Albert Richard Sanyoto <albertalrisa@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^7.6.0",
+    "tailwindcss": "^1.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "2.0.5",
+    "typescript": "^3.9.7",
+    "watch": "^1.0.2"
+  }
+}
